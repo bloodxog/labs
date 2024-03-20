@@ -36,7 +36,7 @@ public:
         delete[] this->_array;
     }
 
-    
+
     int capacity() { return _capacity; }
 
     int size() { return _size; }
@@ -85,19 +85,19 @@ public:
     class Iterator {
     public:
         friend class Array;
-        
+
         Iterator(T* element) : current(element) {}
-        
+
         Iterator(const Iterator& it) : current(it.current) {}
-        
+
         bool operator== (const Iterator& it) { return this->current == it.current; }
-        
+
         bool operator!= (const Iterator& it) { return this->current != it.current; }
-        
+
         Iterator& operator++() { if (this->current != 0) this->current = this->current + 1; return *this; }
-        
+
         Iterator& operator--() { if (this->current != 0) this->current = this->current + 1; return *this; }
-        
+
         Iterator& operator+(int n)
         {
             Iterator result = this->current;
@@ -275,6 +275,10 @@ int main()
         std::cin >> inputArray[i].p;
     Rand rand = Rand(inputArray, n);
     std::cout << "input= " << rand;
+
+    std::cout << "Вывод" << std::endl;
+
+    delete inputArray;
 
     return 0;
 }
